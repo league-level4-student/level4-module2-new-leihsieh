@@ -5,16 +5,16 @@ import java.util.Scanner;
 
 public class DoWhileDemo {
 
-    /*
-     * A do-while loop is similar to a while loop except it always runs at least
-     * one time.
-     * 
-     * You can use a do-while loop to avoid code repetition in many situations
-     * where a while loop's condition is dependent on initialization of a
-     * variable declared right before the loop.
-     */
+	/*
+	 * A do-while loop is similar to a while loop except it always runs at least one
+	 * time.
+	 * 
+	 * You can use a do-while loop to avoid code repetition in many situations where
+	 * a while loop's condition is dependent on initialization of a variable
+	 * declared right before the loop.
+	 */
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
 
@@ -43,7 +43,7 @@ public class DoWhileDemo {
 
         String again;
 
-        while (again.equals("y")) {
+        do {
             int flip = rand.nextInt(2);
             String coin;
 
@@ -56,7 +56,7 @@ public class DoWhileDemo {
 
             System.out.print("Would you like to flip again (y/n)? ");
             again = scan.next();
-        }
+        } while (again.equals("y"));
 
         scan.close();
     }

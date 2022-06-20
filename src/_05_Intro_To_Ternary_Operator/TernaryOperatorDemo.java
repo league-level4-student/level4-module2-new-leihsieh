@@ -1,5 +1,7 @@
 package _05_Intro_To_Ternary_Operator;
 
+import java.util.Scanner;
+
 public class TernaryOperatorDemo {
 
     /*
@@ -10,7 +12,7 @@ public class TernaryOperatorDemo {
 
     public static void main(String[] args) {
 
-        int x = 5;
+        int x = 9;
 
         /*
          * The following ternary operator checks if x is equal to 5(the if
@@ -26,7 +28,6 @@ public class TernaryOperatorDemo {
 
         x = x == 5 ? x * 5 : x / 5;
 
-        System.out.println(x);
 
         /*
          * 2. Ask the user what season it is and saves their input through use
@@ -39,9 +40,15 @@ public class TernaryOperatorDemo {
          * 4. Surround the previous parts with a do while loop and continue
          * until the response says "FIRE!".
          */
-        
-        
-        
+        Scanner sc = new Scanner(System.in);
+        String season = "";
+        do {
+        System.out.println("what season is it?");
+        season = sc.nextLine();
+        season = season.equals("duck season") ? "FIRE" : "rabbit season";
+        System.out.println(season);
+        } while (!season.equals("FIRE"));
+        sc.close();
         /*
          * WARNING: Ternary operators can be used to improve the readability of
          * your code if used sparingly for very simple if/else statements.

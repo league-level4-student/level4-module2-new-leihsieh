@@ -1,22 +1,15 @@
-package _02_Generics_Store;
+package _06_Console_Store;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/*
- * The Cart class is a Bounded Type Generic class
- * 
- * <T extends Food> means we can only create a Cart with objects part of the 
- * Food class
- */
-
 @SuppressWarnings("unchecked")
-public class Cart<T extends NonFood> {
+public class Cart<T extends Food> {
     private T[] cart;
 
     public Cart() {
-        cart = (T[]) new NonFood[5];
+        cart = (T[]) new Food[5];
     }
 
     // Adds an item to the cart
@@ -41,7 +34,7 @@ public class Cart<T extends NonFood> {
 
         for (int i = 0; i < cart.length; i++) {
             if (cart[i] != null) {
-                panel.add(cart[i].getNonFood());
+                panel.add(cart[i].getFood());
             }
         }
         frame.pack();
@@ -50,5 +43,17 @@ public class Cart<T extends NonFood> {
 
     public int length() {
         return cart.length;
+    }
+    
+    public T get(int index) {
+    	return cart[index];
+    }
+    
+    public void remove(){
+    	for (int i = 0; i < cart.length; i++) {
+            if (cart[i] == null) {
+                cart[i-1] = null;
+            }
+        }
     }
 }

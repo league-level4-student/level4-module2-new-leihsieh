@@ -25,7 +25,7 @@ public class ScannerDemo {
          * are running your program or the input/output stream you are using.
          */
 
-        
+        Scanner sc = new Scanner(System.in);
         
         /*
          * 2. Use a syso to ask the user for their name and then use the Scanner
@@ -42,7 +42,8 @@ public class ScannerDemo {
          * String variable.
          */
 
-        
+        System.out.println("enter your name");
+        String name = sc.next();
         
         /*
          * 3. Ask the user for their age in the console. Then use the Scanner to
@@ -52,7 +53,8 @@ public class ScannerDemo {
          * on Integer.parseInt().
          */
 
-        
+        System.out.println("enter your age");
+        int age = sc.nextInt();
         
         /*
          * 4.) Try asking the user for another piece of information that's not a
@@ -61,10 +63,11 @@ public class ScannerDemo {
          * Note: There are many methods similar to the one you used for int that
          * are capable of taking in primitive data types.
          */
-
+        System.out.println("enter your screen time report");
+        double screen = sc.nextDouble();
         // 5.) Print the user's data to the console nicely formatted.
 
-        
+        System.out.println("\nName: " + name + "\nAge: " + age + "\nScreen time: " + screen + " lmao");
         
         /*
          * 6.) Close your scanner to avoid memory leaks.
@@ -72,7 +75,7 @@ public class ScannerDemo {
          * Note: When using a Scanner with the System.in input stream in larger
          * programs only close the scanner when your program is completely done.
          */
-
+        sc.close();
     }
 
 }
